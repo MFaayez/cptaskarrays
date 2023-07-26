@@ -1,6 +1,7 @@
+// "Copyright 2023 <Malik Faayez Muhammad>" [legal/copyright]
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked_list.h"
+#include <linked_list.h>
 
 /* returns a new node whose data is set to DATA and next is set to NULL */
 Node *create_node(int data) {
