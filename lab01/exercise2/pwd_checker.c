@@ -1,7 +1,7 @@
+// "Copyright 2023 <Malik Faayez Muhammad>" [legal/copyright]
 #include <string.h>
-#include "pwd_checker.h"
+#include <pwd_checker.h>
 #include<assert.h>
-
 /*
 Password checker
 
@@ -76,10 +76,9 @@ bool check_name(const char *first_name, const char *last_name, const char *passw
     const char *first = strstr(password, first_name);
     const char *last = strstr(password, last_name);
     if (!(first && last))
-    	return true;
+      return true;
     else
-    	return false;
-    	
+      return false;
 }
 
 /* Returns true if PASSWORD meets the conditions specified above */
