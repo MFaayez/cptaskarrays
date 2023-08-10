@@ -23,13 +23,14 @@ accumulatorone:
 	sw ra 4(sp)
 	addi a0 a0 4
 	jal accumulatorone
-	lw t1 0(sp)
+	lw s0 0(sp)
 	lw ra 4(sp)
 	addi sp sp 8
-	add a0 a0 t1
+	add a0 a0 s0
+	lw s0 0(sp)
+	addi sp sp 4
 	jr ra
 Endone:
-	li a0 0
 	jr ra
 
 accumulatortwo:

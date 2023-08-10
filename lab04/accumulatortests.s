@@ -1,7 +1,7 @@
 .import lotsofaccumulators.s
 
 .data
-inputarray: .word 1,2,3,4,5,6,7,0
+inputarray: .word 0,2,3,4,5,6,7,0
 
 TestPassed: .asciiz "Test Passed!"
 TestFailed: .asciiz "Test Failed!"
@@ -15,9 +15,16 @@ TestFailed: .asciiz "Test Failed!"
 #The main function currently runs a simple test that checks if accumulator works on the given input array. All versions of accumulate should pass this.
 #Modify the test so that you can catch the bugs in four of the five solutions!
 main:
+    li t3, 5
+    addi sp, sp, -8
+    sw t3, 4(sp)
     la a0 inputarray
-    jal accumulatorone
-    li t0 28
+    jal accumulatorfour
+    li t0 27
+    lw t3, 4(sp)
+    addi sp, sp, 8
+    li t1 5
+    bne t3 t1 Fail
     beq a0 t0 Pass
 Fail:
     la a0 TestFailed
